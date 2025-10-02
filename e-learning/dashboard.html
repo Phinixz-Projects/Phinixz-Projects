@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Phinixz Code (Dark Mode)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Mengaktifkan dark mode berdasarkan class="dark" pada elemen <html>
+        }
+    </script>
+    
+    <script>
+        // Fungsi untuk mengelola mode
+        function toggleDarkMode() {
+            // Cek apakah elemen html memiliki class 'dark'
+            const isDarkMode = document.documentElement.classList.toggle('dark');
+            
+            // Simpan preferensi pengguna ke Local Storage
+            localStorage.setItem('color-theme', isDarkMode ? 'dark' : 'light');
+        }
+
+        // Fungsi yang dijalankan saat halaman dimuat
+        // Cek preferensi yang tersimpan atau preferensi sistem
+        (function() {
+            const savedTheme = localStorage.getItem('color-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 font-sans transition-colors duration-500">
+    
+    <div class="flex h-screen overflow-hidden">
+        
+        <div class="flex flex-col w-64 bg-indigo-800 dark:bg-indigo-900 h-screen fixed">
+            <div class="flex items-center justify-center h-16 bg-indigo-900 dark:bg-indigo-950">
+                <span class="text-white text-xl font-bold">Phinixz Code Dashboard</span>
+            </div>
+            
+            <nav class="flex-1 px-2 py-4 space-y-2">
+                <a href="#" class="flex items-center px-4 py-3 text-white rounded-lg bg-indigo-700 dark:bg-indigo-600 font-semibold">
+                    <span class="mr-3">🏠</span>Dashboard
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 text-indigo-200 dark:text-indigo-300 rounded-lg hover:bg-indigo-700 hover:text-white dark:hover:bg-indigo-700 transition">
+                    <span class="mr-3">📚</span>Kursus Saya
+                </a>
+                </nav>
+            
+            </div>
+
+        <div class="flex-1 flex flex-col overflow-y-auto md:ml-64"> 
+            
+            <header class="flex items-center justify-between h-16 bg-white dark:bg-gray-800 border-b dark:border-gray-700 shadow-sm px-6 transition-colors duration-500">
+                <h1 class="text-xl font-semibold text-gray-800 dark:text-white">Selamat Datang Kembali!</h1>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" onclick="toggleDarkMode()" 
+                        class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-yellow-400 hover:ring-2 hover:ring-indigo-500 transition duration-300">
+                        <span class="text-xl">☀️</span>
+                    </button>
+                    <span class="text-gray-500 dark:text-gray-400">🔔</span>
+                    <span class="text-gray-500 dark:text-gray-400">👤</span>
+                </div>
+            </header>
+
+            <main class="flex-1 p-6">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Ringkasan Pembelajaran Anda</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-indigo-500 transition-colors duration-500">
+                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Total Kursus Aktif</p>
+                        <p class="text-4xl font-bold text-gray-900 dark:text-white mt-1">3</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-green-500 transition-colors duration-500">
+                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Kursus Selesai</p>
+                        <p class="text-4xl font-bold text-gray-900 dark:text-white mt-1">12</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-l-4 border-yellow-500 transition-colors duration-500">
+                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Progress Rata-rata</p>
+                        <p class="text-4xl font-bold text-gray-900 dark:text-white mt-1">78%</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg transition-colors duration-500">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white border-b dark:border-gray-700 pb-3">Kursus yang Sedang Anda Ikuti</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="p-4 border dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                            <p class="font-bold text-lg text-indigo-600 dark:text-indigo-400">Web Development Dasar</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Oleh: Mentor A</p>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <p class="text-sm text-gray-700 dark:text-gray-300">75% Selesai</p>
+                                <button class="text-sm text-white bg-green-500 px-3 py-1 rounded-full hover:bg-green-600">
+                                    Lanjutkan
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>
