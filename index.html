@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Phinixz Projects - Kreator Digital</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        // Konfigurasi Tailwind untuk warna kustom
+        tailwind.config = {
+            darkMode: 'class', // Mengaktifkan Dark Mode berdasarkan class="dark" di <html>
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4f46e5', // Indigo 600
+                        'secondary': '#f97316', // Orange 500
+                    }
+                }
+            }
+        }
+
+        // Memuat preferensi dari local storage saat halaman dimuat
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <style>
+        /* CSS kustom (Optional: untuk smooth scroll) */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 font-sans transition-colors duration-500">
+
+    <header class="bg-white dark:bg-gray-950 sticky top-0 z-50 shadow-lg dark:shadow-gray-700/50 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="img/logo.png" class="w-8 h-8 object-contain" alt="Logo Portofolio">
+                <span class="text-2xl font-bold text-gray-900 dark:text-white hover:text-primary transition duration-300">
+                    Phinixz Projects
+                </span>
+            </a>
+            <nav class="flex space-x-6 items-center">
+                <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition duration-300 hidden md:inline">Tentang</a>
+                <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition duration-300 hidden md:inline">Keahlian</a>
+                <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition duration-300 hidden md:inline">Proyek</a>
+                <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition duration-300 hidden md:inline">Kontak</a>
+                
+                <button id="theme-toggle" class="p-2 ml-4 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300 focus:outline-none">
+                    <svg id="sun-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg id="moon-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="bg-white dark:bg-gray-800 py-20 sm:py-32 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img src="img/logo.png" alt="Foto Profil" class="rounded-full w-40 h-40 mx-auto mb-8 object-cover border-4 border-primary shadow-2xl transition duration-500 hover:scale-105">
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
+                Halo, Saya <span class="text-primary">Phinixz Projects</span> 👋
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-3">
+                Seorang **Kreator Digital Multidisiplin**.
+            </p>
+            <p class="text-lg text-gray-500 dark:text-gray-400 mb-10 max-w-3xl mx-auto">
+                Saya menggabungkan **Grafik Desain** yang menawan, **Pemrograman** yang fungsional, dan hasil **Fotografi/Videografi** yang sinematik.
+            </p>
+            <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg shadow-xl text-white bg-primary hover:bg-indigo-700 transition duration-300 transform hover:translate-y-[-2px]">
+                Lihat Karya Terbaru Saya
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 sm:py-24 bg-gray-100 dark:bg-gray-900 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12">
+                Tentang Perjalanan Saya
+            </h2>
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl transition-colors duration-500">
+                <div>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                        Saya percaya bahwa sebuah proyek yang hebat memerlukan paduan antara **estetika visual** dan **fungsi teknis** yang solid. Berbekal pengalaman sebagai Programmer yang fokus pada *Front-End*, saya memastikan desain saya tidak hanya indah tetapi juga mudah diimplementasikan dan *user-friendly*.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Di sisi visual, keahlian saya dalam **Grafik Desain** dan **Foto/Video** memungkinkan saya mengontrol narasi merek secara menyeluruh—mulai dari *branding* digital, aset website, hingga konten promosi video.
+                    </p>
+                    <a href="#contact" class="mt-6 inline-block text-primary hover:text-indigo-700 font-semibold transition duration-300">
+                        Mari Berkolaborasi &rarr;
+                    </a>
+                </div>
+                <div class="mt-10 lg:mt-0 p-6 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4 border-b dark:border-gray-600 pb-2">Nilai Inti</h3>
+                    <ul class="space-y-3 text-lg text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center"><span class="text-primary dark:text-indigo-400 mr-3 text-xl">🎨</span> Desain Berpusat Pada Pengguna</li>
+                        <li class="flex items-center"><span class="text-primary dark:text-indigo-400 mr-3 text-xl">🚀</span> Efisiensi Kode dan Performa</li>
+                        <li class="flex items-center"><span class="text-primary dark:text-indigo-400 mr-3 text-xl">🎥</span> Penceritaan Visual yang Kuat</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 sm:py-24 bg-white dark:bg-gray-800 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12">
+                Keahlian Multidisiplin
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="p-6 bg-indigo-50 dark:bg-gray-700 rounded-xl shadow-md border-t-4 border-primary hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold text-primary dark:text-indigo-400 mb-3">💻 Programming & Dev</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Membangun antarmuka yang bersih, responsif, dan performatif.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300 text-sm font-medium rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300 text-sm font-medium rounded-full">JavaScript</span>
+                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300 text-sm font-medium rounded-full">React/Vue</span>
+                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300 text-sm font-medium rounded-full">HTML5</span>
+                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300 text-sm font-medium rounded-full">Laravel</span>
+                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300 text-sm font-medium rounded-full">PHP Native</span>
+                        <span class="px-3 py-1 bg-indigo-200 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300 text-sm font-medium rounded-full">Dan Lainnya</span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-pink-50 dark:bg-gray-700 rounded-xl shadow-md border-t-4 border-pink-500 hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold text-pink-600 dark:text-pink-400 mb-3">🎨 Grafik Desain & UI/UX</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Menciptakan identitas visual yang kuat dan pengalaman pengguna yang intuitif.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-pink-200 text-pink-800 dark:bg-pink-900 dark:text-pink-300 text-sm font-medium rounded-full">Figma</span>
+                        <span class="px-3 py-1 bg-pink-200 text-pink-800 dark:bg-pink-900 dark:text-pink-300 text-sm font-medium rounded-full">Adobe Illustrator</span>
+                        <span class="px-3 py-1 bg-pink-200 text-pink-800 dark:bg-pink-900 dark:text-pink-300 text-sm font-medium rounded-full">Branding</span>
+                        <span class="px-3 py-1 bg-pink-200 text-pink-800 dark:bg-pink-900 dark:text-pink-300 text-sm font-medium rounded-full">Dan Lainnya</span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-green-50 dark:bg-gray-700 rounded-xl shadow-md border-t-4 border-green-500 hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold text-green-600 dark:text-green-400 mb-3">🎥 Foto & Videografi</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Mengubah konsep menjadi visual dinamis dan bercerita.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-300 text-sm font-medium rounded-full">Adobe Premiere Pro</span>
+                        <span class="px-3 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-300 text-sm font-medium rounded-full">Adobe Photoshop</span>
+                        <span class="px-3 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-300 text-sm font-medium rounded-full">Adobe After Effect</span>
+                        <span class="px-3 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-300 text-sm font-medium rounded-full">Color Grading</span>
+                        <span class="px-3 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-300 text-sm font-medium rounded-full">Cinematography</span>
+                        <span class="px-3 py-1 bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-300 text-sm font-medium rounded-full">Dan Lainnya</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 sm:py-24 bg-gray-100 dark:bg-gray-900 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-12">
+                Proyek Pilihan (Menggabungkan Skills)
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden transform hover:-translate-y-1">
+                    <img class="h-56 w-full object-cover" src="https://via.placeholder.com/400x300?text=Web+App+Desain" alt="Proyek Web">
+                    <div class="p-6">
+                        <div class="text-xs font-semibold text-primary mb-1">PROGRAMMING + DESAIN</div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Platform E-Learning Kustom</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                            Membangun *landing page* dan dashboard dengan desain UI/UX yang dibuat di Figma, diimplementasikan menggunakan **Tailwind CSS** dan **React**.
+                        </p>
+                        <a href="#" class="text-primary hover:text-indigo-700 font-medium text-sm">Lihat Demo &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden transform hover:-translate-y-1">
+                    <img class="h-56 w-full object-cover" src="https://via.placeholder.com/400x300?text=Video+Branding" alt="Proyek Video">
+                    <div class="p-6">
+                        <div class="text-xs font-semibold text-green-600 dark:text-green-400 mb-1">FOTOGRAFI/VIDEO + DESAIN</div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Video Branding Perusahaan Startup</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                            Mulai dari konsep, *shooting*, hingga *post-production* (editing, *color grading*). Digunakan untuk kampanye media sosial.
+                        </p>
+                        <a href="#" class="text-green-600 hover:text-green-800 font-medium text-sm">Tonton Video &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden transform hover:-translate-y-1">
+                    <img class="h-56 w-full object-cover" src="https://via.placeholder.com/400x300?text=Desain+Aset" alt="Proyek Desain">
+                    <div class="p-6">
+                        <div class="text-xs font-semibold text-pink-600 dark:text-pink-400 mb-1">GRAFIK DESAIN + PROGRAMMING</div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Desain dan Integrasi Icon Pack</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                            Membuat set ikon kustom di Illustrator, kemudian mengintegrasikannya ke aplikasi web sebagai file SVG.
+                        </p>
+                        <a href="#" class="text-pink-600 hover:text-pink-800 font-medium text-sm">Lihat Desain &rarr;</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+<section id="contact" class="py-16 sm:py-24 bg-white dark:bg-gray-800 transition-colors duration-500">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center p-8 rounded-xl shadow-2xl bg-indigo-50 dark:bg-gray-700">
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-4">
+            Siap Mewujudkan Proyek Anda?
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-10">
+            Mari diskusikan bagaimana kombinasi *skill* desain, kode, dan visual saya dapat meningkatkan proyek Anda.
+        </p>
+        
+        <a 
+            href="https://wa.me/6281235948571?text=Halo%2C%20Saya%20Ingin%20Kolaborasi%20Dengan%20Anda%20Untuk%20Membuat%20Proyek%20......" 
+            target="_blank" 
+            class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-lg font-bold rounded-lg text-white bg-green-500 hover:bg-green-600 transition duration-300 shadow-lg transform hover:scale-105"
+        >
+            <i class="fa fa-whatsapp"></i>  &nbsp; &nbsp; Kuy Kolaborasi Proyek!
+        </a>
+        
+        <div class="mt-8 flex justify-center space-x-6 text-gray-600 dark:text-gray-300">
+            <a href="#" target="_blank" class="hover:text-primary transition duration-300">LinkedIn</a>
+            <a href="https://github.com/Phinixz-Projects" target="_blank" class="hover:text-primary transition duration-300">GitHub</a>
+            <a href="https://instagram.com/phinixz_projects" target="_blank" class="hover:text-primary transition duration-300">Instagram</a>
+        </div>
+    </div>
+</section>
+
+    <footer class="bg-gray-800 dark:bg-gray-950 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <p class="text-gray-400 dark:text-gray-500 text-sm">
+                &copy; 2025 Phinixz Projects.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const htmlEl = document.documentElement;
+
+        // Fungsi untuk memperbarui ikon berdasarkan mode saat ini
+        function updateIcons(isDarkMode) {
+            if (isDarkMode) {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+
+        // Tentukan mode awal saat JS dimuat
+        const isDarkModeInitial = htmlEl.classList.contains('dark');
+        updateIcons(isDarkModeInitial);
+
+        // Event Listener untuk mengaktifkan/menonaktifkan mode
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = htmlEl.classList.contains('dark');
+
+            if (isDarkMode) {
+                // Ubah ke light mode
+                htmlEl.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                updateIcons(false);
+            } else {
+                // Ubah ke dark mode
+                htmlEl.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateIcons(true);
+            }
+        });
+    </script>
+</body>
+</html>
