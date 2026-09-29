@@ -53,16 +53,10 @@
 
 ## 📊 GitHub Stats
 
-<div align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=Phinixz-Project&theme=flat" alt="Trophies" />
-  </a>
-  <br/><br/>
-  <img src="https://github-readme-stats.vercel.app/api?username=Phinixz-Project&show_icons=true&locale=en&theme=tokyonight" alt="Stats" height="165"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Phinixz-Project&show_icons=true&locale=en&layout=compact&theme=tokyonight" alt="Top Langs" height="165"/>
-  <br/><br/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Phinixz-Project&theme=tokyonight" alt="Streak" />
-</div>
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Phinixz-Projects&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
+  <img src="https://streak-stats.demolab.com?user=Phinixz-Projects&theme=tokyonight" alt="GitHub Streak" />
+</p>
 
 <br/>
 
