@@ -53,9 +53,16 @@
 
 ## 📊 GitHub Stats
 
+### 📌 Main Account (Phinixz-Projects)
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Phinixz-Projects&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
   <img src="https://streak-stats.demolab.com?user=Phinixz-Projects&theme=tokyonight" alt="GitHub Streak" />
+</p>
+
+### 📌 Secondary Account (Phoenixmchz)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Phoenixmchz&show_icons=true&theme=tokyonight" alt="GitHub Stats Phoenixmchz" />
+  <img src="https://streak-stats.demolab.com?user=Phoenixmchz&theme=tokyonight" alt="GitHub Streak Phoenixmchz" />
 </p>
 
 <br/>
@@ -69,6 +76,10 @@
 ## ⚡️ Connect & Support
 
 <p align="center">
+  <a href="https://github.com/Phoenixmchz" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub_Alt-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Phoenixmchz" />
+  </a>
+  &nbsp;
   <a href="https://www.instagram.com/phinixz_projects" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-F35369?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
   </a>
