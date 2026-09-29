@@ -82,6 +82,7 @@
 </p>
 </p>
 <img data-importer="snake" src="https://raw.githubusercontent.com/Phinixz-Projects/Phinixz-Projects/snake-output/snake.svg" alt="Snake animation" />
+![Pac-Man](img/acrade-contributions.svg "PACKMAN animation")
 
 <br clear="both">
 
